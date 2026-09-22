@@ -1,17 +1,20 @@
 const { DataTypes } = require('sequelize');
+
 const sequelize = require('../config/bd');
 
 const FichaTecnica = sequelize.define(
   'FichaTecnica',
   {
     duracaoMinutos: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER
     },
+
     orcamento: {
-      type: DataTypes.FLOAT,
+      type: DataTypes.FLOAT
     },
+
     bilheteria: {
-      type: DataTypes.FLOAT,
+      type: DataTypes.FLOAT
     }
   },
   {
