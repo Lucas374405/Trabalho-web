@@ -1,29 +1,30 @@
-<h1>Cadastrar Diretor</h1>
+<div class="pure-g">
+    <div class="pure-u-1 pure-u-md-1-2">
 
-<form action="/diretores" method="POST">
+        <h1>Cadastrar Diretor</h1>
 
-  <div>
-    <label>Nome do Diretor:</label>
-    <input type="text" name="nome">
-  </div>
+        <form action="/diretores" method="POST" class="pure-form pure-form-stacked">
 
-  <br>
+            <label for="nome">Nome do Diretor:</label>
+            <input type="text" id="nome" name="nome">
 
-  <div>
-    <label>Ano de Nascimento:</label>
-    <input type="number" name="anoNascimento">
-  </div>
+            <label for="anoNascimento">Ano de Nascimento:</label>
+            <input type="number" id="anoNascimento" name="anoNascimento">
 
-  <br>
-  <div>
-    <label>Nacionalidade:</label>
-    <input type="text" name="nacionalidade"> 
-  </div>
+            <label for="nacionalidade">Nacionalidade:</label>
+            <input type="text" id="nacionalidade" name="nacionalidade">
 
-  <br>
+            <br>
 
-  <button type="submit">
-    Cadastrar
-  </button>
+            <button type="submit" class="pure-button pure-button-primary">
+                Cadastrar
+            </button>
 
-</form>
+            <a href="/diretores" class="pure-button">
+                Voltar
+            </a>
+
+        </form>
+
+    </div>
+</div>

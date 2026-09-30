@@ -1,29 +1,37 @@
-<h1>Cadastrar FichaTecnica</h1>
+<div class="pure-g">
+    <div class="pure-u-1 pure-u-md-1-2">
 
-<form action="/Fichatecnica" method="POST">
+        <h1>Cadastrar Ficha Técnica</h1>
 
-  <div>
-    <label>Duracão em Minutos:</label>
-    <input type="number" name="duracaoMinutos">
-  </div>
+        <form action="/Fichatecnica" method="POST"
+              class="pure-form pure-form-stacked">
 
-  <br>
+            <label for="duracaoMinutos">Duração em Minutos:</label>
+            <input type="number"
+                   id="duracaoMinutos"
+                   name="duracaoMinutos">
 
-  <div>
-    <label>Orçamento:</label>
-    <input type="number" name="orcamento">
-  </div>
+            <label for="orcamento">Orçamento:</label>
+            <input type="number"
+                   id="orcamento"
+                   name="orcamento">
 
-  <br>
-  <div>
-    <label>Biheteria:</label>
-    <input type="number" name="bilheteria"> 
-  </div>
+            <label for="bilheteria">Bilheteria:</label>
+            <input type="number"
+                   id="bilheteria"
+                   name="bilheteria">
 
-  <br>
+            <br>
 
-  <button type="submit">
-    Cadastrar
-  </button>
+            <button type="submit" class="pure-button pure-button-primary">
+                Cadastrar
+            </button>
 
-</form>
+            <a href="/Fichatecnica" class="pure-button">
+                Voltar
+            </a>
+
+        </form>
+
+    </div>
+</div>

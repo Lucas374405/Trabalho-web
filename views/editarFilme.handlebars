@@ -1,46 +1,55 @@
-<h1>Editar Filme</h1>
+<div class="pure-g">
+    <div class="pure-u-1 pure-u-md-1-2">
 
-<form action="/filmes/{{filme.id}}?_method=PUT" method="POST">
+        <h1>Editar Filme</h1>
 
-  <div>
-    <label>Nome do Filme:</label>
-    <input type="text" name="nome" value="{{filme.nome}}">
-  </div>
+        <form action="/filmes/{{filme.id}}?_method=PUT"
+              method="POST"
+              class="pure-form pure-form-stacked">
 
-  <br>
+            <label for="nome">Nome do Filme:</label>
+            <input type="text"
+                   id="nome"
+                   name="nome"
+                   value="{{filme.nome}}">
 
-  <div>
-    <label>Ano:</label>
-    <input type="number" name="ano" value="{{filme.ano}}">
-  </div>
+            <label for="ano">Ano:</label>
+            <input type="number"
+                   id="ano"
+                   name="ano"
+                   value="{{filme.ano}}">
 
-  <br>
+            <label for="diretorId">Diretor:</label>
+            <select id="diretorId" name="diretorId">
+                {{#each diretores}}
+                    <option value="{{this.id}}"
+                        {{#if (eq this.id @root.filme.diretorId)}}selected{{/if}}>
+                        {{this.nome}}
+                    </option>
+                {{/each}}
+            </select>
 
-  <div>
-    <label>Diretor:</label>
-    <select name="diretorId">
-      {{#each diretores}}
-        <option value="{{this.id}}" {{#if (eq this.id @root.filme.diretorId)}}selected{{/if}}>
-          {{this.nome}}
-        </option>
-      {{/each}}
-    </select>
-  </div>
+            <label for="artistas">Artistas:</label>
+            <select id="artistas" name="artistas" multiple>
+                {{#each artistas}}
+                    <option value="{{this.id}}"
+                        {{#if (eq this.id @root.filme.artistaId)}}selected{{/if}}>
+                        {{this.nome}}
+                    </option>
+                {{/each}}
+            </select>
 
-  <br>
+            <br>
 
-  <div>
-    <label>Artistas:</label>
-    <select name="artistas" multiple>
-      {{#each artistas}}
-        <option value="{{this.id}}" {{#if (eq this.id @root.filme.artistaId)}}selected{{/if}}>
-          {{this.nome}}
-        </option>
-      {{/each}}
-    </select>
-  </div>
+            <button type="submit" class="pure-button pure-button-primary">
+                Editar
+            </button>
 
-  <button type="submit">
-    Editar
-  </button>
-</form>
+            <a href="/filmes" class="pure-button">
+                Voltar
+            </a>
+
+        </form>
+
+    </div>
+</div>

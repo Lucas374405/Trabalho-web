@@ -1,38 +1,28 @@
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-<a href="/">
-  Inicial
-</a><br>
-<a href="/filmes">
-  Filmes
+<a href="/" class="pure-button">
+    <i class="fa-solid fa-house"></i>
+    Inicial
 </a>
 
-<h1>Detalhar Filme</h1>
+<a href="/Fichatecnica" class="pure-button">
+    <i class="fa-solid fa-file-lines"></i>
+    Fichas Técnicas
+</a>
+
+<h1>Detalhar Ficha Técnica</h1>
 
 <hr>
 
-<ul>
+<div class="pure-form pure-form-stacked">
 
-    <label>Nome:</label>
-    {{filme.nome}}
-    <br>
+    <label>Duração em Minutos:</label>
+    <p>{{fichaTecnica.duracaoMinutos}}</p>
 
-    <label>Ano:</label>
-    {{filme.ano}}
-    <br>
+    <label>Orçamento:</label>
+    <p>{{fichaTecnica.orcamento}}</p>
 
-    <label>Diretor</label>
-    <a href='/diretores/{{filme.diretor.id}}'>{{filme.diretor.nome}} - {{filme.diretor.anoNascimento}} - {{filme.diretor.nacionalidade}}</a><br>
-    <br>
+    <label>Bilheteria:</label>
+    <p>{{fichaTecnica.bilheteria}}</p>
 
-    <label>Artistas</label>
-    <ul>
-      {{#each filme.artistas}}
-        <li>
-          <a href='/artistas/{{this.id}}'>{{this.nome}} - {{this.anoNascimento}}</a><br>
-        </li>
-      {{/each}}
-    </ul>
-
-</ul>
+</div>
